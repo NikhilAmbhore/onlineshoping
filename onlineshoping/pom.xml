@@ -1,9 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+
 	<groupId>com.shoping</groupId>
 	<artifactId>onlineshoping</artifactId>
 	<packaging>war</packaging>
+
 	<version>0.0.1-SNAPSHOT</version>
 	<name>onlineshoping Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -12,6 +15,13 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+
+		<!-- link backend project -->
+		<dependency>
+			<groupId>com.shoping</groupId>
+			<artifactId>shopingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 		<dependency>
@@ -49,7 +59,7 @@
 			<version>1.1.2</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 
 	</dependencies>
 	<build>
