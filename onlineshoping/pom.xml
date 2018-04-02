@@ -62,7 +62,7 @@
 
 
 	</dependencies>
-	<build>
+	 <build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -74,5 +74,5 @@
 			</plugin>
 		</plugins>
 		<finalName>onlineshoping</finalName>
-	</build>
+	</build> 
 </project>
