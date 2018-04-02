@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.shoping.shopingbackend.dao.CategoryDAO;
 import com.shoping.shopingbackend.dto.Category;
-import com.shoping.shopingbackend.dto.Product;
+
 
 @Repository("categoryDAO")
 @Transactional

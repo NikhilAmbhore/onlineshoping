@@ -58,7 +58,7 @@ public class Category {
 
 	/* private fields */
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//automatic generaed id
 	private int id;
 
 	private String name;

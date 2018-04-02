@@ -14,7 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "com.shoping.shopingbackend" })
+@ComponentScan(basePackages = { "com.shoping.shopingbackend.dto" })
 @EnableTransactionManagement
 public class HibernateConfig {
 

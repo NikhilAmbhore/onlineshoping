@@ -73,7 +73,7 @@ public class PageController {
 	 * Methods to load all the products and based on category
 	 */
 
-	@RequestMapping(value = "/show/all/products")
+	/*@RequestMapping(value = "/show/all/products")
 	public ModelAndView showAllProducts() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "All Products");
@@ -104,14 +104,14 @@ public class PageController {
 
 		mv.addObject("userClickCategoryProducts", true);
 		return mv;
-	}
+	}*/
 	
 	
 	/*
 	 * Viewing a single product
 	 * */
 	
-	@RequestMapping(value = "/show/{id}/product") 
+	/*@RequestMapping(value = "/show/{id}/product") 
 	public ModelAndView showSingleProduct(@PathVariable int id) throws ProductNotFoundException {
 		
 		ModelAndView mv = new ModelAndView("page");
@@ -133,6 +133,6 @@ public class PageController {
 		
 		return mv;
 		
-	}
+	}*/
 
 }
