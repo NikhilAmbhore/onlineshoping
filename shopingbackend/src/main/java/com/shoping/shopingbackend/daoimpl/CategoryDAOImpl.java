@@ -1,6 +1,5 @@
 package com.shoping.shopingbackend.daoimpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -10,40 +9,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.shoping.shopingbackend.dao.CategoryDAO;
 import com.shoping.shopingbackend.dto.Category;
+import com.shoping.shopingbackend.dto.Product;
 
 @Repository("categoryDAO")
+@Transactional
 public class CategoryDAOImpl implements CategoryDAO {
-	
+
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	private static List<Category> categories = new ArrayList<Category>();
-
-	static {
-		Category cat = new Category();
-		cat.setId(1);
-		cat.setName("Tevilivion");
-		cat.setDescription("Nikihil");
-		cat.setImageUrl("abc.png");
-		categories.add(cat);
-
-	}
-	static {
-		Category cat = new Category();
-		cat.setId(2);
-		cat.setName("Table");
-		cat.setDescription("Samrat");
-		cat.setImageUrl("abc.png");
-		categories.add(cat);
-
-	}
-
 	public List<Category> list() {
-		// TODO Auto-generated method stub
-		return categories;
+		return sessionFactory.getCurrentSession().createQuery("FROM CATEGORY", Category.class).getResultList();
+
 	}
 
-	@Transactional
 	public boolean add(Category category) {
 
 		try {
@@ -51,8 +30,40 @@ public class CategoryDAOImpl implements CategoryDAO {
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+
+		}
+		return false;
+	}
+
+	/* getting single category id base on id */
+	public Category get(int id) {
+		try {
+			return sessionFactory.getCurrentSession().get(Category.class, Integer.valueOf(id));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/* update single category */
+	public boolean update(Category category) {
+		try {
+			sessionFactory.getCurrentSession().update(category);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
+	}
+
+	public boolean delete(Category category) {
+		try {
+			category.setActive(false);
+			return this.update(category);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }
