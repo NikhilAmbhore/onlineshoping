@@ -3,10 +3,14 @@ package com.shoping.shopingbackend.dto;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +18,10 @@ public class Product {
 	private String code;
 	private String name;
 	private String brand;
+	@JsonIgnore
 	private String description;
 	@Column(name = "IS_ACTIVE")
+	@JsonIgnore
 	private boolean active;
 	@Column(name = "UNIT_PRICE")
 
@@ -23,14 +29,16 @@ public class Product {
 	private int quantity;
 
 	@Column(name = "category_id")
-	private int category_id;
+	@JsonIgnore
+	private int categoryId;
 	@Column(name = "supplier_id")
-	private int supplier_id;
+	@JsonIgnore
+	private int supplierId;
 	private int purchase;
 	private int views;
 
 	public Product() {
-		this.code = UUID.randomUUID().toString().substring(20).toUpperCase(); 
+		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
 
 	}
 
@@ -98,20 +106,24 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public int getCategory_id() {
-		return category_id;
+
+
+
+
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public int getSupplier_id() {
-		return supplier_id;
+		return supplierId;
 	}
 
 	public void setSupplier_id(int supplier_id) {
-		this.supplier_id = supplier_id;
+		this.supplierId = supplier_id;
 	}
 
 	public int getPurchase() {

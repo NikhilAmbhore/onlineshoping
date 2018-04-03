@@ -19,7 +19,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	private SessionFactory sessionFactory;
 
 	public List<Category> list() {
-		return sessionFactory.getCurrentSession().createQuery("FROM CATEGORY", Category.class).getResultList();
+		return sessionFactory.getCurrentSession().createQuery("FROM Category", Category.class).getResultList();
 
 	}
 

@@ -9,9 +9,15 @@ $(function() {
 	case 'Services':
 		$('#services').addClass('active');
 		break;
-
+	case 'All Products':
+		$('#listProducts').addClass('active');
+		break;
 	default:
-		$('#home').addClass('active');
+		if (menu == "Home")
+			break;
+		$('#listProducts').addClass('active');
+
+		$('#a-' + menu).addClass('active');
 		break;
 	}
 });

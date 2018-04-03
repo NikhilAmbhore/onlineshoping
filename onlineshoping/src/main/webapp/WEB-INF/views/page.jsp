@@ -7,6 +7,7 @@
 <spring:url var="js" value="resources/js" />
 <spring:url var="images" value="resources/images" />
 
+
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +31,8 @@
 <!-- Custom styles for this template -->
 <link href="${css}/shop-item.css" rel="stylesheet">
 
+<%-- <link href="${css}/bootstrap..readable.thems.css" rel="stylesheet"> --%>
+
 </head>
 
 <body>
@@ -45,7 +48,7 @@
 
 		<div class="content">
 			<c:if test="${userClickHome == true}">
-				<%@include file="./home.jsp"%>
+				<%@include file="home.jsp"%>
 
 			</c:if>
 			<!-- User click about -->

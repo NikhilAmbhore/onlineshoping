@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.shoping.onlineshoping.exception.ProductNotFoundException;
+/*import com.shoping.onlineshoping.exception.ProductNotFoundException;*/
 import com.shoping.shopingbackend.dao.CategoryDAO;
 import com.shoping.shopingbackend.dao.ProductDAO;
-import com.shoping.shopingbackend.dto.Category;
-import com.shoping.shopingbackend.dto.Product;
+/*import com.shoping.shopingbackend.dto.Category;
+import com.shoping.shopingbackend.dto.Product;*/
 
 @Controller
 public class PageController {
@@ -50,15 +50,15 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value = { "/services" })
+/*	@RequestMapping(value = { "/services" })
 	public ModelAndView services() {
 		ModelAndView mv = new ModelAndView("page");
-		/* mv.addObject("greeting", "Welcome to spring mvc"); */
+		 mv.addObject("greeting", "Welcome to spring mvc"); 
 		mv.addObject("title", "Services");
 		mv.addObject("userClickServices", true);
 		return mv;
 	}
-
+*/
 	@RequestMapping(value = "/test/{greeting}")
 	public ModelAndView test(@PathVariable("greeting") String greeting) {
 		if (greeting == null) {

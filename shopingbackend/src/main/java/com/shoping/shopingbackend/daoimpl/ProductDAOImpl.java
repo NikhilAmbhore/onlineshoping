@@ -36,8 +36,9 @@ public class ProductDAOImpl implements ProductDAO {
 		try {
 			sessionFactory.getCurrentSession().persist(product);
 			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println(ex);
 		}
 		return false;
 	}
@@ -64,14 +65,14 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	public List<Product> listActivesProducts() {
-		String selectActiveProducts = "FROM Product WHERE active = : active";
+		String selectActiveProducts = "FROM Product WHERE active = :active";
 
 		return sessionFactory.getCurrentSession().createQuery(selectActiveProducts, Product.class)
 				.setParameter("active", true).getResultList();
 	}
 
 	public List<Product> listActivesProductsByCategory(int categoryId) {
-		String selectActiveProductsByCategory = "FROM Product WHERE active = : active AND categoryId=:categoryId";
+		String selectActiveProductsByCategory = "FROM Product WHERE active = :active AND categoryId= :categoryId";
 
 		return sessionFactory.getCurrentSession().createQuery(selectActiveProductsByCategory, Product.class)
 				.setParameter("active", true).setParameter(categoryId, categoryId).getResultList();
@@ -81,7 +82,7 @@ public class ProductDAOImpl implements ProductDAO {
 	public List<Product> getLatestActivesProducts(int count) {
 
 		return sessionFactory.getCurrentSession()
-				.createQuery("FROM Product where active=:active ORDER BY id", Product.class)
+				.createQuery("FROM PRODUCT where active=:active ORDER BY id", Product.class)
 				.setParameter("active", true).setParameter("active", true).setFirstResult(0).setMaxResults(count)
 				.getResultList();
 
