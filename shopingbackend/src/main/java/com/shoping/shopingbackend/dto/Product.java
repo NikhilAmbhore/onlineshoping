@@ -28,7 +28,7 @@ public class Product {
 	private double unitPrice;
 	private int quantity;
 
-	@Column(name = "category_id")
+	@Column(name = "CATEGORY_ID")
 	@JsonIgnore
 	private int categoryId;
 	@Column(name = "supplier_id")

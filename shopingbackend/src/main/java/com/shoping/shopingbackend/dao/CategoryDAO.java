@@ -15,5 +15,7 @@ public interface CategoryDAO {
 	boolean update(Category category);
 
 	boolean delete(Category category);
+	
+	List<Category> listAcivesCategory();
 
 }

@@ -1,5 +1,5 @@
 package com.shoping.shopingbackend.dto;
-
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +8,27 @@ import javax.persistence.Id;
 
 @Entity
 public class Category {
+	
+	/* private fields */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//automatic generaed id
+	private int id;
+
+	private String name;
+
+	private String description;
+
+	@Column(name = "image_url")
+	private String imageUrl;
+
+	@Column(name = "is_active")
+	private boolean active = true;
+
+/*	private String code;
+	
+	public Category() {
+		this.code ="CRD"+ UUID.randomUUID().toString().substring(26).toUpperCase();
+	}*/
 
 	public int getId() {
 		return id;
@@ -56,19 +77,6 @@ public class Category {
 				+ ", active=" + active + "]";
 	}
 
-	/* private fields */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//automatic generaed id
-	private int id;
-
-	private String name;
-
-	private String description;
-
-	@Column(name = "image_url")
-	private String imageUrl;
-
-	@Column(name = "is_active")
-	private boolean active = true;
+	
 
 }

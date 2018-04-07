@@ -23,6 +23,7 @@
 <title>Online Shopping ${title}</title>
 <script>
 	window.menu = '${title}';
+	window.contextRoot='${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -30,6 +31,8 @@
 
 <!-- Custom styles for this template -->
 <link href="${css}/shop-item.css" rel="stylesheet">
+
+<link href="${css}/dataTables.bootstrap.css rel="stylesheet">
 
 <%-- <link href="${css}/bootstrap..readable.thems.css" rel="stylesheet"> --%>
 
@@ -56,14 +59,38 @@
 				<%@include file="about.jsp"%>
 			</c:if>
 
-			<!-- User click Contact -->
 			<c:if test="${userClickContact == true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			<!-- User click Services -->
-			<c:if test="${userClickServices == true}">
-				<%@include file="services.jsp"%>
+
+			<c:if test="${userClickDemo == true}">
+				<%@include file="demo.jsp"%>
 			</c:if>
+
+
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+
+
+			<!-- Load only when user clicks show product -->
+			<%-- 	<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>	 --%>
+
+			<!-- Load only when user clicks manage product -->
+			<%-- <c:if test="${userClickManageProduct == true}">
+				<%@include file="manageProduct.jsp"%>
+			</c:if>	 --%>
+
+			<!-- Load only when user clicks manage product -->
+			<%-- 		<c:if test="${userClickShowCart == true}">
+				<%@include file="cart.jsp"%>
+			</c:if>	 --%>
+
+
+
 		</div>
 
 
@@ -76,6 +103,8 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/dataTables.bootstrap.js"></script>
 		<script src="${js}/myapp.js"></script>
 
 	</div>

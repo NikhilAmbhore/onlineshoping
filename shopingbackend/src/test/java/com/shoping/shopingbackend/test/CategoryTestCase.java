@@ -1,8 +1,9 @@
 package com.shoping.shopingbackend.test;
 
-/*import static org.junit.Assert.assertEquals;*/
+import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
+import org.junit.Test;
 /*import org.junit.Test;*/
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -26,26 +27,37 @@ public class CategoryTestCase {
 
 	}
 
-/*	@Test
-	public void testAddCategory() {
+	@Test
+	public void testListCategory() {
+		try {
 
-		category = new Category();
-		category.setName("Television");
-		category.setDescription("This is some description for television!!");
-		category.setImageUrl("nikhil.png");
-		assertEquals("Successfully add a single category", true, categoryDAO.add(category));
+		/*	category = (Category) categoryDAO.list();*/
+
+			assertEquals("Successfully fetched the list of categories from the table!", true, categoryDAO.list());
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
 	}
-*/
+
+	/*
+	 * @Test public void testAddCategory() {
+	 * 
+	 * category = new Category(); category.setName("Television");
+	 * category.setDescription("This is some description for television!!");
+	 * category.setImageUrl("nikhil.png");
+	 * assertEquals("Successfully add a single category", true,
+	 * categoryDAO.add(category)); }
+	 */
 	/*
 	 * @Test public void testGetCategory() { category = categorydao.get(1);
 	 * assertEquals("Successfully fetch a category", "Televition",
 	 * category.getName()); }
 	 */
-	/*@Test
-	public void testUpdateCategory() {
-		category = categoryDAO.get(1);
-		category.setName("Tv");
-		assertEquals("Successfully update a category", true, categoryDAO.update(category));
-	}*/
+	/*
+	 * @Test public void testUpdateCategory() { category = categoryDAO.get(1);
+	 * category.setName("Tv"); assertEquals("Successfully update a category", true,
+	 * categoryDAO.update(category)); }
+	 */
 
 }

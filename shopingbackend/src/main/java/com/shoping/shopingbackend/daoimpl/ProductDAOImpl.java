@@ -75,7 +75,7 @@ public class ProductDAOImpl implements ProductDAO {
 		String selectActiveProductsByCategory = "FROM Product WHERE active = :active AND categoryId= :categoryId";
 
 		return sessionFactory.getCurrentSession().createQuery(selectActiveProductsByCategory, Product.class)
-				.setParameter("active", true).setParameter(categoryId, categoryId).getResultList();
+				.setParameter("active", true).setParameter("categoryId", categoryId).getResultList();
 
 	}
 

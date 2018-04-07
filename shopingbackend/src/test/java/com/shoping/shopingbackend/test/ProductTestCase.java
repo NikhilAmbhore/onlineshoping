@@ -32,7 +32,7 @@ public class ProductTestCase {
 		product.setDescription("Lenovo laptop LENOVO G570");
 		product.setUnitPrice(39000);
 		product.setActive(true);
-		product.setCategory_id(3);
+		product.setCategoryId(3);
 		product.setSupplier_id(3);
 
 		assertEquals("Successfully add a single category", true, productDAO.add(product));

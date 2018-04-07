@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shoping.shopingbackend.dao.CategoryDAO;
 import com.shoping.shopingbackend.dao.ProductDAO;
+import com.shoping.shopingbackend.dto.Category;
 import com.shoping.shopingbackend.dto.Product;
 
 @Controller
@@ -16,6 +18,8 @@ import com.shoping.shopingbackend.dto.Product;
 public class JsonDataController {
 	@Autowired
 	private ProductDAO productDAO;
+	@Autowired
+	private CategoryDAO categoryDAO;
 	
 	
 
@@ -29,6 +33,12 @@ public class JsonDataController {
 	@ResponseBody
 	public List<Product> getProductsByCategory(@PathVariable int id) {
 		return productDAO.listActivesProductsByCategory(id);
+	}
+	
+	@RequestMapping("/all/categorys")
+	@ResponseBody
+	public List<Category> getAllCategorys(){
+		return categoryDAO.listAcivesCategory();
 	}
 
 }

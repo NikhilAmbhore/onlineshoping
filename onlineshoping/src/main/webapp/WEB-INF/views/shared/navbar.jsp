@@ -6,14 +6,35 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarResponsive">
 	<ul class="navbar-nav ml-auto">
+
 		<li class="nav-item active"><a class="nav-link"
 			href="${contextRoot}/home">Home <span class="sr-only">(current)</span>
 		</a></li>
+
+		<li id="listProducts"><a href="${contextRoot}/AllProducts">View
+				Products</a></li>
+
+	<%-- 	<security:authorize access="hasAuthority('ADMIN')">
+			<li id="manageProduct"><a href="${contextRoot}/manage/product">Manage
+					Product</a></li>
+		</security:authorize> --%>
+
+		<li id="demo" class="nav-item"><a class="nav-link"
+			href="${contextRoot}/demo">Demo</a></li>
+
+		<li id="about" class="nav-item"><a class="nav-link"
+			href="${contextRoot}/contact">contact</a></li>
+
 		<li id="about" class="nav-item"><a class="nav-link"
 			href="${contextRoot}/about">About</a></li>
-		<li id="listProducts" class="nav-item"><a class="nav-link"
-			href="${contextRoot}/listProducts">View Products</a></li>
-		<li id="contact" class="nav-item"><a class="nav-link"
-			href="${contextRoot}/Contact">Contact</a></li>
+
+		<%-- <li id="listProducts" class="nav-item"><a class="nav-link"
+			href="${contextRoot}/listProducts">View Products</a></li> --%>
+
+
+		<%-- <li id="contact" class="nav-item"><a class="nav-link"
+			href="${contextRoot}/Contact">Contact</a></li> --%>
+
+
 	</ul>
 </div>
